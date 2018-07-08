@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="BloodBank">
+  <ClassDiagramComponents>
+    <Class name="BloodBank" package="bloodbank" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="patientCtlr" package="Controller" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="p" type="Patients" visibility="private"/>
+        <Field name="pCon" type="PatientsConsult" visibility="private"/>
+        <Field name="pForm" type="patientForm" visibility="private"/>
+        <Field name="rPanel" type="readPanel" visibility="private"/>
+        <Field name="aPanel" type="addPanel" visibility="private"/>
+        <Field name="uPanel" type="updatePanel" visibility="private"/>
+        <Field name="dPanel" type="deletePanel" visibility="private"/>
+        <Field name="updatePanel" type="updateInfoPanel" visibility="private"/>
+        <Field name="layout" type="GridBagLayout" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Patients" name="p"/>
+          <Argument type="PatientsConsult" name="pCon"/>
+          <Argument type="patientForm" name="pForm"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public"/>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Conn" package="Model" visibility="public" xPosition="722.0" yPosition="20.0">
+      <Fields>
+        <Field name="conn" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getConn" returnType="Connection" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Patients" package="Model" visibility="public" xPosition="930.0" yPosition="520.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="fName" type="String" visibility="private"/>
+        <Field name="lName" type="String" visibility="private"/>
+        <Field name="gender" type="String" visibility="private"/>
+        <Field name="bloodType" type="String" visibility="private"/>
+        <Field name="age" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getBloodType" returnType="String" visibility="public"/>
+        <Method name="setBloodType" returnType="void" visibility="public">
+          <Argument type="String" name="bloodType"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getfName" returnType="String" visibility="public"/>
+        <Method name="setfName" returnType="void" visibility="public">
+          <Argument type="String" name="fName"/>
+        </Method>
+        <Method name="getlName" returnType="String" visibility="public"/>
+        <Method name="setlName" returnType="void" visibility="public">
+          <Argument type="String" name="lName"/>
+        </Method>
+        <Method name="getGender" returnType="String" visibility="public"/>
+        <Method name="setGender" returnType="void" visibility="public">
+          <Argument type="String" name="gender"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PatientsConsult" package="Model" visibility="public" xPosition="1237.0" yPosition="33.0">
+      <Fields>
+        <Field name="conn" type="Conn" visibility="package"/>
+        <Field name="r" type="readPanel" visibility="package"/>
+        <Field name="a" type="addPanel" visibility="package"/>
+        <Field name="u" type="updatePanel" visibility="package"/>
+        <Field name="d" type="deletePanel" visibility="package"/>
+        <Field name="update" type="updateInfoPanel" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setUpdate" returnType="void" visibility="public">
+          <Argument type="updateInfoPanel" name="update"/>
+        </Method>
+        <Method name="setD" returnType="void" visibility="public">
+          <Argument type="deletePanel" name="d"/>
+        </Method>
+        <Method name="setU" returnType="void" visibility="public">
+          <Argument type="updatePanel" name="u"/>
+        </Method>
+        <Method name="setA" returnType="void" visibility="public">
+          <Argument type="addPanel" name="a"/>
+        </Method>
+        <Method name="setR" returnType="void" visibility="public">
+          <Argument type="readPanel" name="r"/>
+        </Method>
+        <Method name="insert" returnType="boolean" visibility="public">
+          <Argument type="Patients" name="p"/>
+        </Method>
+        <Method name="update" returnType="boolean" visibility="public">
+          <Argument type="Patients" name="p"/>
+        </Method>
+        <Method name="delete" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="read" returnType="void" visibility="public"/>
+        <Method name="search" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="addPanel" package="View" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="age" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="bloodType" type="javax.swing.JComboBox&lt;String&gt;" visibility="public"/>
+        <Field name="fName" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="gender" type="javax.swing.JComboBox&lt;String&gt;" visibility="public"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lName" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="save" type="javax.swing.JButton" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="genderActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="fNameActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bloodTypeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ageActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="saveActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="deletePanel" package="View" visibility="public" xPosition="2318.0" yPosition="141.0">
+      <Fields>
+        <Field name="deleteBtn" type="javax.swing.JButton" visibility="public"/>
+        <Field name="deleteText" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="patientForm" package="View" visibility="public" xPosition="1956.0" yPosition="552.0">
+      <Fields>
+        <Field name="add" type="javax.swing.JMenuItem" visibility="public"/>
+        <Field name="jMenu1" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="menuCRUD" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="read" type="javax.swing.JMenuItem" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="readPanel" package="View" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="delete" type="javax.swing.JButton" visibility="public"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tab" type="javax.swing.JTable" visibility="public"/>
+        <Field name="update" type="javax.swing.JButton" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="updateInfoPanel" package="View" visibility="public" xPosition="213.0" yPosition="660.0">
+      <Fields>
+        <Field name="ageUpdate" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="bloodTypeUpdate" type="javax.swing.JComboBox&lt;String&gt;" visibility="public"/>
+        <Field name="fNameUpdate" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="genderUpdate" type="javax.swing.JComboBox&lt;String&gt;" visibility="public"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lNameUpdate" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="saveUpdate" type="javax.swing.JButton" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="fNameUpdateActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ageUpdateActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="genderUpdateActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bloodTypeUpdateActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="saveUpdateActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="updatePanel" package="View" visibility="public" xPosition="1213.0" yPosition="571.0">
+      <Fields>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="updateBtn" type="javax.swing.JButton" visibility="public"/>
+        <Field name="updateTxtField" type="javax.swing.JTextField" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Model.PatientsConsult" target="View.deletePanel" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.PatientsConsult" target="View.addPanel" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pCon" source="Controller.patientCtlr" target="Model.PatientsConsult" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="update" source="Model.PatientsConsult" target="View.updateInfoPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.PatientsConsult" target="Model.Conn"/>
+    <HasRelation name="p" source="Controller.patientCtlr" target="Model.Patients" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pForm" source="Controller.patientCtlr" target="View.patientForm" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.PatientsConsult" target="View.updateInfoPanel" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="r" source="Model.PatientsConsult" target="View.readPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.PatientsConsult" target="Model.Patients" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="updatePanel" source="Controller.patientCtlr" target="View.updateInfoPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dPanel" source="Controller.patientCtlr" target="View.deletePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="d" source="Model.PatientsConsult" target="View.deletePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="a" source="Model.PatientsConsult" target="View.addPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="uPanel" source="Controller.patientCtlr" target="View.updatePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rPanel" source="Controller.patientCtlr" target="View.readPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conn" source="Model.PatientsConsult" target="Model.Conn" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Conn" target="Model.Conn" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.PatientsConsult" target="View.updatePanel" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="u" source="Model.PatientsConsult" target="View.updatePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.PatientsConsult" target="View.readPanel" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="aPanel" source="Controller.patientCtlr" target="View.addPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
